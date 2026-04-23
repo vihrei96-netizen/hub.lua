@@ -76,15 +76,16 @@ TopBar.InputBegan:Connect(function(input)
 if input.UserInputType == Enum.UserInputType.MouseButton1
 or input.UserInputType == Enum.UserInputType.Touch then
 
-dragging = true  
-	dragStart = input.Position  
-	startPos = MainFrame.Position  
+dragging = true
+dragStart = input.Position
+startPos = MainFrame.Position
 
-	input.Changed:Connect(function()  
-		if input.UserInputState == Enum.UserInputState.End then  
-			dragging = false  
-		end  
-	end)  
+input.Changed:Connect(function()
+if input.UserInputState == Enum.UserInputState.End then
+dragging = false
+end
+end)
+
 end
 
 end)
@@ -110,15 +111,16 @@ Circle.InputBegan:Connect(function(input)
 if input.UserInputType == Enum.UserInputType.MouseButton1
 or input.UserInputType == Enum.UserInputType.Touch then
 
-draggingCircle = true  
-	dragStartCircle = input.Position  
-	startPosCircle = Circle.Position  
+draggingCircle = true
+dragStartCircle = input.Position
+startPosCircle = Circle.Position
 
-	input.Changed:Connect(function()  
-		if input.UserInputState == Enum.UserInputState.End then  
-			draggingCircle = false  
-		end  
-	end)  
+input.Changed:Connect(function()
+if input.UserInputState == Enum.UserInputState.End then
+draggingCircle = false
+end
+end)
+
 end
 
 end)
@@ -144,9 +146,9 @@ Button.BackgroundColor3 = Color3.fromRGB(35,35,35)
 Button.Text = nome
 Button.TextColor3 = Color3.fromRGB(255,255,255)
 
-local Corner = Instance.new("UICorner")  
-Corner.CornerRadius = UDim.new(0,8)  
-Corner.Parent = Button  
+local Corner = Instance.new("UICorner")
+Corner.CornerRadius = UDim.new(0,8)
+Corner.Parent = Button
 
 Button.MouseButton1Click:Connect(callback)
 
@@ -158,12 +160,12 @@ local aberto = true
 TopBar.MouseButton1Click:Connect(function()
 aberto = not aberto
 
-if aberto then  
-	MainFrame.Visible = true  
-	Circle.Visible = false  
-else  
-	MainFrame.Visible = false  
-	Circle.Visible = true  
+if aberto then
+MainFrame.Visible = true
+Circle.Visible = false
+else
+MainFrame.Visible = false
+Circle.Visible = true
 end
 
 end)
@@ -186,6 +188,9 @@ criarBotao("🕊️ Fly GUI", function()
 loadstring(game:HttpGet("https://raw.githubusercontent.com/XNEOFF/FlyGuiV3/main/FlyGuiV3.txt"))()
 end)
 
+criarBotao("🐷 Piggy", function() loadstring(game:HttpGet("https://raw.githubusercontent.com/vihrei96-netizen/Piggy.lua/main/Piggy.lua"))()
+end)
+
 -- 🔥 HITBOX (FINAL)
 local hitboxAtivo = false
 
@@ -193,26 +198,25 @@ criarBotao("🎯 Hitbox", function()
 hitboxAtivo = not hitboxAtivo
 _G.Disabled = hitboxAtivo
 
-if hitboxAtivo then  
-	_G.HeadSize = 20  
-	  
-	game:GetService("RunService").RenderStepped:Connect(function()  
-		if _G.Disabled then  
-			for i,v in next, game:GetService("Players"):GetPlayers() do  
-				if v.Name ~= game:GetService("Players").LocalPlayer.Name then  
-					pcall(function()  
-						v.Character.HumanoidRootPart.Size = Vector3.new(_G.HeadSize,_G.HeadSize,_G.HeadSize)  
-						v.Character.HumanoidRootPart.Transparency = 0.7  
-						v.Character.HumanoidRootPart.BrickColor = BrickColor.new("Really black")  
-						v.Character.HumanoidRootPart.Material = "Neon"  
-						v.Character.HumanoidRootPart.CanCollide = false  
-					end)  
-				end  
-			end  
-		end  
-	end)  
+if hitboxAtivo then
+_G.HeadSize = 20
+
+game:GetService("RunService").RenderStepped:Connect(function()
+if _G.Disabled then
+for i,v in next, game:GetService("Players"):GetPlayers() do
+if v.Name ~= game:GetService("Players").LocalPlayer.Name then
+pcall(function()
+v.Character.HumanoidRootPart.Size = Vector3.new(_G.HeadSize,_G.HeadSize,_G.HeadSize)
+v.Character.HumanoidRootPart.Transparency = 0.7
+v.Character.HumanoidRootPart.BrickColor = BrickColor.new("Really black")
+v.Character.HumanoidRootPart.Material = "Neon"
+v.Character.HumanoidRootPart.CanCollide = false
+end)
+end
+end
+end
+end)
+
 end
 
 end)
-
-Esse e meu hub
