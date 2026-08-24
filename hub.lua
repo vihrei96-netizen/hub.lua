@@ -244,6 +244,10 @@ criarBotao("🧭 Shiftlock", function()
 loadstring(game:HttpGet("https://rawscripts.net/raw/Universal-Script-Full-Shiftlock-System-Cl*ic-193460"))()
 end)
 
+criarBotao("🪖EbHub", function()
+		loadstring(game:HttpGet("https://raw.githubusercontent.com/vihrei96-netizen/Eb-hubyvitukk/main/Ebhub"))()
+	end)
+
 -- 🔥 HITBOX
 local hitboxAtivo = false
 
